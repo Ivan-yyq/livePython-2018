@@ -1,0 +1,7 @@
+{
+  "demon3.py::testMap": true,
+  "demon33.py": true,
+  "demon33.py::testMap": true,
+  "test.py": true,
+  "test.py::testMap": true
+}
