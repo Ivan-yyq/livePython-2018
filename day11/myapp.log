@@ -1,0 +1,4 @@
+ 2018/04/25 20:48:04 demon2.py[line:33] INFO 开始执行main函数
+ 2018/04/25 20:48:04 demon2.py[line:36] INFO 调用hello() 函数
+ 2018/04/25 20:48:04 demon2.py[line:41] ERROR 除数不能为0
+ 2018/04/25 20:48:04 demon2.py[line:43] WARNING 文件没有正常关闭
