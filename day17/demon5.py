@@ -7,7 +7,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-#from 第十七课.demon4 import Student
+from day17.demon4 import Student
 
 engine = create_engine('mysql+pymysql://xiang:xiang@192.168.48.136/sqlalchemy')
 DBsession = sessionmaker(bind=engine)
