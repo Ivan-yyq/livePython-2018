@@ -51,6 +51,9 @@ cus.fetchmany(size=n)  获取多个
 cus.close()
 conn.close()
 注意结合try exception finally的使用
+
+
+
 SQLAlchemy
 1. 创建引擎
 engine = create_engine('mysql+pymysql://username:password@hostname:port/db')
