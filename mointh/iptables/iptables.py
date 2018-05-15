@@ -1,4 +1,10 @@
-#-*-coding:utf-8 -*-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2018/3/13 12:50
+# @Author  : yangyuanqiang
+# @File    : iptables.py
+
+
 import iptc
 import paramiko
 import datetime
