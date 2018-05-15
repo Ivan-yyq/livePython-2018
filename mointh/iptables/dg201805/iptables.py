@@ -6,8 +6,14 @@
 
 
 import iptc
+import paramiko
 import datetime
+import commands
+import subprocess
 import log
+import urllib
+import urllib2
+import json
 
 '''
 体彩自动化监控并禁止异常ip
@@ -20,9 +26,14 @@ import log
 # 规则定义函数
 def stop_ip(ips):
     if ips is not None:
+        robot_ip=[]
+        # print ips
         for ip in ips:
+            ip=ip+'.0/24'
+            robot_ip.append(ip)
+            print ip
             table = iptc.Table(iptc.Table.FILTER)
-            chain = iptc.Chain(table, "DOCKER")
+            chain = iptc.Chain(table, "INPUT")
             rule = iptc.Rule()
             rule.src = ip
             rule.protocol = "tcp"
@@ -34,13 +45,22 @@ def stop_ip(ips):
             chain.insert_rule(rule)
             # chain.delete_rule(rule)
             table.commit()
+            # print 'z'
+
+#发送钉钉群机器人告警
+    start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    url = 'https://oapi.dingtalk.com/robot/send?access_token=c118499f2e6858eb67f6addcc25561d2660ddfa836b79aa822bfade057780217'
+    data = {"msgtype": "text", "text": {"content": '东莞扫码活动\n当前时间:' + str(start)
+                                                    +'\niptables防火墙新增加规则，Block掉的IP:' + str (robot_ip)}}
+
+    headers = {'Content-Type': 'application/json'}
+    request = urllib2.Request(url=url, headers=headers, data=json.dumps(data))
+    re = urllib2.urlopen(request, timeout=10)
+    re_data = re.read()
+
 
 if __name__ == '__main__':
     dic = {}
-    log = log.Log('/var/lib/docker/overlay/313493da52b84333d10423918c6ab83791b04482ddf9b362e79f123622556fa0/merged/app/nginx/logs/tlotteryAct-dlt-sz.access.log', 1, 60, dic, 30)
+    log = log.Log('/root/PycharmProjects/python_atuo/dg201805/dg201805.access.log', 1, 30000, dic)
     ips = log.parse()
     stop_ip(ips)
-    print datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print ips
-
-
