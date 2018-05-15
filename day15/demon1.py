@@ -17,9 +17,9 @@ import pymysql
 # 3. commit；
 
 
-conn = pymysql.connect(host="192.168.48.136", port=3306, user="xiang", passwd="xiang", db="test")
+conn = pymysql.connect(host="192.168.3.11", port=3306, user="user1", passwd="123456", db="test")
 cus = conn.cursor()
-sql = "select * from test2;"
+sql = "select * from tb1;"
 
 cus.execute(sql)
 result = cus.fetchall()
