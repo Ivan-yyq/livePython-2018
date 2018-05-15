@@ -6,10 +6,7 @@
 
 
 import iptc
-import paramiko
 import datetime
-import commands
-import subprocess
 import log
 
 '''
