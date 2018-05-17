@@ -6,7 +6,7 @@
 
 from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
 
-engine = create_engine('mysql+pymysql://xiang:xiang@192.168.48.136/sqlalchemy')
+engine = create_engine('mysql+pymysql://user1:123456@192.168.3.11/sqlalchemy')
 metadata = MetaData(engine)
 
 teacher = Table('teacher', metadata,
