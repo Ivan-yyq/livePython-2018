@@ -18,32 +18,32 @@ ENCODEING = "utf-8"
 
 
 # 读取文件内容
-fr = open("1.txt", "rb")
-# for i, line in enumerate(fr.readlines()):
-#     print("第{0}行内容为：{1}".format(i, line))
-print(fr.readline())
-print(fr.tell())
-print(fr.readline())
-print(fr.tell())
-fr.seek(-3, 2)
-print(fr.tell())
-
-print(fr.name)
-# print(fr.encoding)
-print(fr.closed)
-
-
-
-# print(fr.read())
-fr.close()
-print(fr.closed)
+# fr = open("1.txt", "rb")
+# # for i, line in enumerate(fr.readlines()):
+# #     print("第{0}行内容为：{1}".format(i, line))
+# print(fr.readline())
+# print(fr.tell())
+# print(fr.readline())
+# print(fr.tell())
+# fr.seek(-3, 2)
+# print(fr.tell())
+#
+# print(fr.name)
+# # print(fr.encoding)
+# print(fr.closed)
+#
+#
+#
+# # print(fr.read())
+# fr.close()
+# print(fr.closed)
 
 
 # 写入文件内容
-fw = open("2.log", "w", encoding=ENCODEING)
-fw.write("hello wolrd\n你咋不上天呢？\nno 作 no die!\n")
-fw.truncate(10)
-fw.close()
+# fw = open("2.log", "w", encoding=ENCODEING)
+# fw.write("hello wolrd\n你咋不上天呢？\nno 作 no die!\n")
+# fw.truncate(10)
+# fw.close()
 
 
 
@@ -65,5 +65,5 @@ fw.close()
 
 
 print("#############################")
-with codecs.open("1.txt", "r", encoding=ENCODEING) as f:
+with codecs.open("ip.txt", "r", encoding=ENCODEING) as f:
     print(f.read())
