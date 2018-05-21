@@ -12,12 +12,18 @@
 '''
 
 
-
+str = " www.www.com "
+name = "Ivan"
+age = 24
 # 字符串常用的方法：
 # .strip()                  字符串过滤空格，有事没事，你用一下，只能过滤前和尾的空格
-# .replace(old, new)        方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次
-# .find(sub)                字符串查找sub字符串的内容，如果找到，返回自字符串的下标，否则返回-1
+print(str.strip())
+# .replace(old, new)        方法把字符串中的 old（旧字符串） 替换成 new(新字符串)，默认替换1次，如果指定第三个参数max，则替换不超过 max 次
+print(str.replace("www","aaa",2))
+# .find(sub)                字符串查找sub字符串的内容，如果找到，返回自字符串的下标，下标由0开始，否则返回-1
+print(str.find("c"))
 # .format()                 字符串格式化
+print(str + "{0}, {1}".format(name, age))
 # .split()                  切割字符串
 # .join(可迭代对象)         集成
 # .startswith()             用于检查字符串是否是以指定子字符串开头，如果是则返回 True，否则返回 Fals
