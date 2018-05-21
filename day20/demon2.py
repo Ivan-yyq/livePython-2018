@@ -3,10 +3,12 @@
 # @Time    : 2018/5/17 21:36
 # @Author  : lingxiangxiang
 # @File    : demon2.py
+
+
 '''pip install pytyhon-memcached'''
 import memcache
 
-mc = memcache.Client(['192.168.48.136:12000'])
+mc = memcache.Client(['192.168.3.20:12000'])
 print(mc)
 mc.set("aaa", "hello world")
 print(mc.get("aaa"))

@@ -5,10 +5,10 @@
 # @File    : demon1.py
 import redis
 
-r = redis.Redis(host="192.168.48.136", port=6379, db=0)
+r = redis.Redis(host="192.168.3.20", port=6379, db=0)
 print(r)
 print(r.keys())
-print(r.get("aaa").decode("utf-8"))
+# print(r.get("aaa").decode("utf-8"))
 
 # 字符串操作
 # get(key)
