@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2018/5/15 20:34
 # @Author  : lingxiangxiang
-# @File    : demo1.py
+# @File    : demon1.py
 '''
 字符串类型
 list类型
