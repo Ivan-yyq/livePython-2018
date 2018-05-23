@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time : 2018/4/4 10:38
 # @Author : yangyuanqiang
-# @File : demo1.py
+# @File : demon1.py
 
 age = input("Please is age: ")
 if age.strip():
