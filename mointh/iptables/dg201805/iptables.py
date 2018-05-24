@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/3/13 12:50
-# @Author  : yangyuanqiang
-# @File    : iptables.py
+# @Time : 2018/5/17 12:18
+# @Author : yangyuanqiang
+# @File : iptables.py
 
+
+
+# python 2.x 版本使用
 
 import iptc
 import paramiko
@@ -25,31 +28,32 @@ import json
 
 # 规则定义函数
 def stop_ip(ips):
-    if ips is not None:
-        robot_ip=[]
-        # print ips
-        for ip in ips:
-            ip=ip+'.0/24'
-            robot_ip.append(ip)
-            print ip
-            table = iptc.Table(iptc.Table.FILTER)
-            chain = iptc.Chain(table, "INPUT")
-            rule = iptc.Rule()
-            rule.src = ip
-            rule.protocol = "tcp"
-            match = iptc.Match(rule,'tcp')
-            match.dport = "80"
-            rule.add_match(match)
-            target = iptc.Target(rule, "DROP")
-            rule.target = target
-            chain.insert_rule(rule)
-            # chain.delete_rule(rule)
-            table.commit()
-            # print 'z'
+    if len(ips) == 0 :  #ips等于0，直接退出循环
+        return
+    robot_ip = []
+    # print ips
+    for ip in ips:  #ips不等于0，进入循环判断
+        ip = ip + '.0/24'
+        robot_ip.append(ip)
+        print ip
+        table = iptc.Table(iptc.Table.FILTER)
+        chain = iptc.Chain(table, "INPUT")
+        rule = iptc.Rule()
+        rule.src = ip
+        rule.protocol = "tcp"
+        match = iptc.Match(rule, 'tcp')
+        match.dport = "80"
+        rule.add_match(match)
+        target = iptc.Target(rule, "DROP")
+        rule.target = target
+        chain.insert_rule(rule)
+        # chain.delete_rule(rule)
+        table.commit()
+        # print 'z'
 
 #发送钉钉群机器人告警
     start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    url = 'https://oapi.dingtalk.com/robot/send?access_token=c118499f2e6858eb67f6addcc25561d2660ddfa836b79aa822bfade057780217'
+    url = 'https://oapi.dingtalk.com/'
     data = {"msgtype": "text", "text": {"content": '东莞扫码活动\n当前时间:' + str(start)
                                                     +'\niptables防火墙新增加规则，Block掉的IP:' + str (robot_ip)}}
 
@@ -61,6 +65,9 @@ def stop_ip(ips):
 
 if __name__ == '__main__':
     dic = {}
-    log = log.Log('/root/PycharmProjects/python_atuo/dg201805/dg201805.access.log', 1, 30000, dic)
+    log = log.Log('/logs/dg201805.access.log', 1, 60, dic)
     ips = log.parse()
     stop_ip(ips)
+
+
+

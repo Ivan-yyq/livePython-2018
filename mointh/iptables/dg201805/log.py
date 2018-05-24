@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/3/13 10:50
-# @Author  : yangyuanqiang
-# @File    : log.py
+# @Time : 2018/5/17 10:18
+# @Author : yangyuanqiang
+# @File : log.py
 
+# python 2.x 版本使用
 
 import sys
 import datetime
 import time
+
+
+
 class Log:
   def __init__(self, filename,ncols,Qtime,dic,):
     self.filename = filename
@@ -52,7 +56,7 @@ class Log:
     for item in soredic:
       # if counts==int(self.count):
       #   break
-      if item[1] > 10:    #ip大于30次，drop掉
+      if item[1] > 30:    #ip大于50次，drop掉
         # print("IP:%s  Total Times: %s"%(item[0],item[1]))
         ipList.append('.'.join(item[0].rsplit('.')[:3]))
     #'''
