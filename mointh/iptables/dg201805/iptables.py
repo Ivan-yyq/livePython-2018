@@ -11,11 +11,11 @@
 import iptc
 import paramiko
 import datetime
-import commands
+# import commands
 import subprocess
 import log
 import urllib
-import urllib2
+# import urllib2
 import json
 
 '''
@@ -35,7 +35,7 @@ def stop_ip(ips):
     for ip in ips:  #ips不等于0，进入循环判断
         ip = ip + '.0/24'
         robot_ip.append(ip)
-        print ip
+        # print ip
         table = iptc.Table(iptc.Table.FILTER)
         chain = iptc.Chain(table, "INPUT")
         rule = iptc.Rule()
@@ -58,9 +58,9 @@ def stop_ip(ips):
                                                     +'\niptables防火墙新增加规则，Block掉的IP:' + str (robot_ip)}}
 
     headers = {'Content-Type': 'application/json'}
-    request = urllib2.Request(url=url, headers=headers, data=json.dumps(data))
-    re = urllib2.urlopen(request, timeout=10)
-    re_data = re.read()
+    # request = urllib2.Request(url=url, headers=headers, data=json.dumps(data))
+    # re = urllib2.urlopen(request, timeout=10)
+    # re_data = re.read()
 
 
 if __name__ == '__main__':
