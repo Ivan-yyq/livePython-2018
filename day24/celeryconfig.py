@@ -5,8 +5,8 @@
 # @File    : celeryconfig.py
 from kombu import Queue, Exchange
 
-BROKER_URL = "redis://192.168.48.136:6379/1"
-CELERY_RESULT_BACKEND = "redis://192.168.48.136:6379/2"
+BROKER_URL = "redis://192.168.3.11:6379/1"
+CELERY_RESULT_BACKEND = "redis://192.168.3.11:6379/2"
 
 
 CELERY_QUEUES = {
