@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2017/11/27 22:52
-# @Author  : lingxiangxiang
+# @Time    : 2018/05/27 09:10
+# @Author  : yangyuanqiang
 # @File    : demon3.py
 
 from celery import Celery
