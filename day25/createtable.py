@@ -4,6 +4,7 @@
 # @Author  : yangyuanqiang
 # @File    : createtable.py
 
+# 创建表
 
 import codecs
 

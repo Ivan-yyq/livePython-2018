@@ -5,6 +5,8 @@
 # @File    : insertdata.py
 
 
+# 插入数据
+
 import codecs
 
 from sqlalchemy import Integer, Column, String, create_engine
