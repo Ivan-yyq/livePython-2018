@@ -6,7 +6,7 @@
 
 
 
-from tasks import *
+from demon7 import *
 re1 = taskA.delay(100, 200)
 print(re1.result)
 re2 = taskB.delay(1, 2, 3)
