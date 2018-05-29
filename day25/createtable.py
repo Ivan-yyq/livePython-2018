@@ -17,7 +17,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-engine = create_engine('mysql+pymysql://xiang:xiang@192.168.48.136/sqlalchemy')
+engine = create_engine('mysql+pymysql://user1:123456@192.168.3.11/sqlalchemy')
 
 metadata = MetaData(engine)
 

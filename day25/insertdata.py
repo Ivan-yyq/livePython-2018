@@ -13,7 +13,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 
-engine = create_engine('mysql+pymysql://xiang:xiang@192.168.48.136/sqlalchemy?charset=utf8')
+engine = create_engine('mysql+pymysql://user1:123456@192.168.3.11/sqlalchemy?charset=utf8')
 
 Base = declarative_base()
 class Dictionary(Base):
