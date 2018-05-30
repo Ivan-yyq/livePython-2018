@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/5/29 22:11
+# @Time    : 2018/5/30 22:11
 # @Author  : yangyuanqiang
 # @File    : insertdata.py
 
@@ -44,6 +44,6 @@ class HandleData(object):
         session.commit()
 
 
-handleData = HandleData('dictionary.txt')
+handleData = HandleData('dictionary.txt')   #数据
 handleData.make_data_to_str()
 session.close()

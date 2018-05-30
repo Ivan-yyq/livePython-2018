@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/5/29 22:11
+# @Time    : 2018/5/30 22:11
 # @Author  : yangyuanqiang
 # @File    : createtable.py
 
 # 创建表
 
 import codecs
-
-
 
 from sqlalchemy import Column, MetaData, Table
 from sqlalchemy import Integer
@@ -28,3 +26,5 @@ dictionary = Table('dictionary', metadata,
              Column('value', String(50))
              )
 metadata.create_all(engine)
+
+print(Table)

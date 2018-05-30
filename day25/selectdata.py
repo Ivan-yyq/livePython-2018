@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2018/5/29 22:12
+# @Time    : 2018/5/30 22:12
 # @Author  : yangyuanqiang
 # @File    : selectdata.py
 
