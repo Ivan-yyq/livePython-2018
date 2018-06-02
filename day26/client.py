@@ -9,7 +9,7 @@
 import socket
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-address = ('127.0.0.1', 6666)
+address = ('192.168.3.11', 6666)
 s.connect(address)
 flage = 1
 print("start client!")
