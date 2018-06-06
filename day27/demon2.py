@@ -12,7 +12,7 @@ python -m SimpleHTTPRequest
 import http.server
 import socketserver
 port = 8000
-host = '127.0.0.1'
+host = '192.168.3.11'
 address = (host, port)
 # handle = SimpleHTTPRequest.SimpleHTTPRequestHandler
 handle = http.server.SimpleHTTPRequestHandler

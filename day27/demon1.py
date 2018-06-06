@@ -11,7 +11,7 @@ host = "www.baidu.com"
 port = 443
 
 ip = socket.gethostbyname(host)
-print(ip)
+print("百度IP地址: {0}".format(ip))
 
 address = (ip, port)
 
