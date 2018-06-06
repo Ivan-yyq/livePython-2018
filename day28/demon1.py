@@ -4,7 +4,21 @@
 # @Author  : yangyuanqiang
 # @File    : demon1.py
 
-#使用别人封装好的第三方模块发送邮箱
+'''
+使用别人封装好的第三方模块发送邮箱
+User  用户民
+Password 用户密码，很多情况需要使用授权码
+Host   smtp的地址
+Port    默认使用ssl协议，默认是465端口
+To   收件人
+Subject     主题
+Contents    消息内容
+Attachments   附件
+Cc  抄送人
+
+
+'''
+
 
 import yagmail
 
