@@ -9,14 +9,14 @@ import csv
 
 fileName = "test.csv"
 
-# with open(fileName, "r", encoding="utf-8") as f:
-#     text = csv.reader(f)
-#     for line in text:
-#         for i in line:
-#             print(i)
-
-
 with open(fileName, "r", encoding="utf-8") as f:
-    for line in f:
-        for i in line.split(","):
-            print(i.strip())
+    text = csv.reader(f)
+    for line in text:
+        for i in line:
+            print(i)
+
+
+# with open(fileName, "r", encoding="utf-8") as f:
+#     for line in f:
+#         for i in line.split(","):
+#             print(i.strip())
