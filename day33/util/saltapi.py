@@ -8,8 +8,6 @@ import json
 import requests
 
 
-
-
 class SaltServer(object):
     def __init__(self):
         self.session = requests.session()
@@ -54,13 +52,13 @@ class SaltServer(object):
             return resultBean
 
 
-    def runRunner(self, fun, arg=None):
+    def runRunner(self, fun, **kwargs):
         url = "http://192.168.48.135:8000"
         data = {
             "client": "runner",
             "fun": fun,
-            "arg": arg
         }
+        data.update(kwargs)
         resultBean = dict()
         try:
             res = self.session.post(url=url,  data=data)
